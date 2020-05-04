@@ -26,6 +26,7 @@ import requests
 from .http_provider_base import HttpProviderBase
 from .http_response import HttpResponse
 
+SOCKET_TIMEOUT=180
 
 class HttpProvider(HttpProviderBase):
 
@@ -58,7 +59,7 @@ class HttpProvider(HttpProviderBase):
                                            headers=headers,
                                            data=f)
                 prepped = request.prepare()
-                response = session.send(prepped)
+                response = session.send(prepped, timeout=SOCKET_TIMEOUT)
         else:
             request = requests.Request(method,
                                        url,
@@ -66,7 +67,7 @@ class HttpProvider(HttpProviderBase):
                                        data=data,
                                        json=content)
             prepped = request.prepare()
-            response = session.send(prepped)
+            response = session.send(prepped, timeout=SOCKET_TIMEOUT)
 
         custom_response = HttpResponse(response.status_code, response.headers, response.text)
         return custom_response
