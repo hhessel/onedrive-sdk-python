@@ -23,10 +23,12 @@
 '''
 from __future__ import unicode_literals, with_statement
 import requests
-from onedrivesdk import http_provider_base, http_response
+
+from ..http_provider_base import HttpProviderBase
+from ..http_response import HttpResponse
 
 
-class HttpProviderWithProxy(http_provider_base.HttpProviderBase):
+class HttpProviderWithProxy(HttpProviderBase):
     """Use this HttpProvider when you want to proxy your requests.
     For example, if you have an HTTP request capture suite, you
     can use this provider to proxy the requests through that
@@ -99,7 +101,7 @@ class HttpProviderWithProxy(http_provider_base.HttpProviderBase):
                                     verify=self.verify_ssl,
                                     proxies=self.proxies)
 
-        custom_response = http_response.HttpResponse(response.status_code, response.headers, response.text)
+        custom_response = HttpResponse(response.status_code, response.headers, response.text)
         return custom_response
 
     def download(self, headers, url, path):
@@ -128,8 +130,8 @@ class HttpProviderWithProxy(http_provider_base.HttpProviderBase):
                     if chunk:
                         f.write(chunk)
                         f.flush()
-            custom_response = http_response.HttpResponse(response.status_code, response.headers, None)
+            custom_response = HttpResponse(response.status_code, response.headers, None)
         else:
-            custom_response = http_response.HttpResponse(response.status_code, response.headers, response.text)
+            custom_response = HttpResponse(response.status_code, response.headers, response.text)
 
         return custom_response
