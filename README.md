@@ -3,6 +3,13 @@
 ------------------------------------------------------------------------
 [![Build status](https://ci.appveyor.com/api/projects/status/x1cjahp817w6r455?svg=true)](https://ci.appveyor.com/project/OneDrive/vroom-client-python)
 
+##  UPDATE AS OF 2022-01-27 We have stopped using this fork for our code base
+
+This is the code we use instead:
+
+https://github.com/AtakamaLLC/cloudsync-onedrive: Contains our interface to onedrive, including oauth.
+https://github.com/AtakamaLLC/cloudsync:  Code/lib/cli that uses the above.
+
 ## About this fork
 This fork is maintained by Atakama, LLC.   This is not the official sdk but a number of pull requests have been incorporated:
 
@@ -17,7 +24,6 @@ If you are looking for an alternative api, consider using one of:
 - authomatic
 
 (Personally, I believe that the onedrivesdk needs a replacement with less marshalling and more documentation.)
-
 
 ## Installation
 
