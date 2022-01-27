@@ -7,8 +7,10 @@
 
 This is the code we use instead:
 
-https://github.com/AtakamaLLC/cloudsync-onedrive: Contains our interface to onedrive, including oauth.
-https://github.com/AtakamaLLC/cloudsync:  Code/lib/cli that uses the above.
+ - https://github.com/AtakamaLLC/cloudsync-onedrive: Contains our interface to onedrive, including oauth.
+ - https://github.com/AtakamaLLC/cloudsync:  Code/lib/cli that uses the above.
+
+We will continue to honor PR's to this fork, but will not be updating/fixing this ourselves.
 
 ## About this fork
 This fork is maintained by Atakama, LLC.   This is not the official sdk but a number of pull requests have been incorporated:
